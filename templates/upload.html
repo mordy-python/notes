@@ -1,0 +1,47 @@
+{% extends 'layout.html' %}
+{% block content %}
+<main class="w3-container w3-mobile w3-threequarter">
+    <form action="{{url_for('save')}}" method="POST" autocomplete="off"
+        class="w3-container w3-card-4 w3-margin w3-mobile">
+        <h2 class="w3-center w3-theme-l1">Submit Notes</h2>
+        <div class="w3-row w3-section">
+            <div class="w3-rest">
+                <input class="w3-input w3-border" name="title" type="text" placeholder="Title">
+            </div>
+        </div>
+        <div class="w3-row w3-section">
+            <div class="w3-rest">
+                <input class="w3-input w3-border" name="name" type="text" placeholder="Name">
+            </div>
+        </div>
+        <div class="w3-row w3-section">
+            <div class="w3-rest">
+                <textarea id="notes" name="notes" rows='10' style="width: 100%;"
+                    placeholder="Copy-Paste history notes Here"></textarea>
+            </div>
+        </div>
+        <button class="w3-button w3-theme-l1 w3-block w3-section w3-ripple w3-padding">Submit</button>
+    </form>
+</main>
+<!-- Side Section -->
+<div class="w3-mobile w3-section w3-quarter w3-card w3-qaurter w3-theme-l1 w3-round-large w3-qaurter"
+    style="width: 25%;">
+    <header>
+        <h1 class="w3-center">Posting Rules</h1>
+    </header>
+    <main class="w3-container">
+        <div class="w3-panel w3-border w3-round-large">
+            <p>Please use your real name</p>
+        </div>
+        <!-- <div class="w3-panel w3-border w3-round-large">
+                <p>Use the date of the history class that you took the notes in</p>
+            </div> -->
+        <div class="w3-panel w3-border w3-round-large">
+            <p>Please use only what was said and nothing else in the notes</p>
+        </div>
+        <div class="w3-panel w3-border w3-round-large">
+            <p>Thank You for contribution!</p>
+        </div>
+    </main>
+</div>
+{% endblock content %}

@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <h1 class="w3-center">History Notes</h1>
+    <main class="w3-container w3-mobile w3-threequarter">
+        {% for post in posts %}
+        <main class="w3-container w3-card-4 w3-margin w3-mobile">
+            <h2 class="w3-center w3-theme-l1">{{post.title}}</h2>
+            <h4 class="w3-left w3-medium">By {{post.name}} on {{post.date.strftime("%Y-%m-%d")}}</h4>
+                <div class="w3-row w3-section">
+                    <div class="w3-rest">
+                        <pre>
+                            <p>{{post.content}}</p>
+                        </pre>
+                    </div>
+                </div>
+        </main>
+        {% endfor %}
+    </main>
+    <!-- Side Section -->
+    <div class="w3-mobile w3-section w3-quarter w3-card w3-qaurter w3-theme-l1 w3-round-large w3-qaurter" style="width: 25%;">
+        <header>
+            <h1 class="w3-center">About this Site</h1>
+        </header>
+        <main class="w3-container">
+            <div class="w3-panel w3-border w3-round-large">
+                <p>By: Mordechai Waldner</p>
+            </div>
+            <div class="w3-panel w3-border w3-round-large">
+                <p>Why? To crowdsource history notes</p>
+            </div>
+            <div class="w3-panel w3-border w3-round-large">
+                <p>Thank You for contribution!</p>
+            </div>
+        </main>
+    </div>
+{% endblock content %}
